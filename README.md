@@ -136,11 +136,12 @@ HospitalPayrollSystem/
 
 ## 👥 Group Members
 
-| SL | Student Name | ID           |
-| -- | ------------ | ------------ |
-| 1  | Your Name    | Your ID      |
-| 2  | Member Name  | Member ID    |
-| 3  | Member Name  | Member ID    |
+| SL | Student Name          | ID            | Responsibility                                                                                         |
+| -- | --------------------- | ------------- | ------------------------------------------------------------------------------------------------------ |
+| 1  | Hakimul Aziz Alif     | 2024200000151 | `Main.java`, `InvalidSalaryException.java`, `EmployeeNotFoundException.java`, `HospitalSalaryGUI.java` |
+| 2  | Sourabh Barmon        | 2023100000116 | `Database.java`                                                                                        |
+| 3  | Ishrat Jahan          | 2024100000112 | `Doctor.java`, `Nurse.java`                                                                            |
+| 4  | Zarin Tasnim Totinee  | 2024100000110 | `Employee.java`, `Payable.java`                                                                        |
 
 ---
 
