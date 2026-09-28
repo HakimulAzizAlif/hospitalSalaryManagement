@@ -4,6 +4,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
+
 public class HospitalSalaryGUI extends JFrame {
 
     private final Database db = new Database();
@@ -19,6 +20,7 @@ public class HospitalSalaryGUI extends JFrame {
     private DefaultTableModel tableModel;
     private JTable table;
     private final JTextArea txtReport = new JTextArea();
+
     public HospitalSalaryGUI() {
         setTitle("Hospital Payroll Management System");
         setSize(820, 600);
@@ -67,43 +69,55 @@ public class HospitalSalaryGUI extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         Font labelFont = new Font("Segoe UI", Font.BOLD, 12);
-        gbc.gridx = 0; gbc.gridy = 0;
-        JLabel lblRole = new JLabel("Role:"); lblRole.setFont(labelFont);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        JLabel lblRole = new JLabel("Role:");
+        lblRole.setFont(labelFont);
         formCard.add(lblRole, gbc);
         gbc.gridx = 1;
         formCard.add(cmbRole, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 1;
-        JLabel lblId = new JLabel("Employee ID:"); lblId.setFont(labelFont);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        JLabel lblId = new JLabel("Employee ID:");
+        lblId.setFont(labelFont);
         formCard.add(lblId, gbc);
         gbc.gridx = 1;
         formCard.add(txtId, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 2;
-        JLabel lblName = new JLabel("Full Name:"); lblName.setFont(labelFont);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        JLabel lblName = new JLabel("Full Name:");
+        lblName.setFont(labelFont);
         formCard.add(lblName, gbc);
         gbc.gridx = 1;
         formCard.add(txtName, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 3;
-        JLabel lblDept = new JLabel("Department:"); lblDept.setFont(labelFont);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        JLabel lblDept = new JLabel("Department:");
+        lblDept.setFont(labelFont);
         formCard.add(lblDept, gbc);
         gbc.gridx = 1;
         formCard.add(txtDept, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 4;
-        JLabel lblBase = new JLabel("Base Salary ($):"); lblBase.setFont(labelFont);
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        JLabel lblBase = new JLabel("Base Salary ($):");
+        lblBase.setFont(labelFont);
         formCard.add(lblBase, gbc);
         gbc.gridx = 1;
         formCard.add(txtBaseSalary, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 5;
+        gbc.gridx = 0;
+        gbc.gridy = 5;
         lblExtra1.setFont(labelFont);
         formCard.add(lblExtra1, gbc);
         gbc.gridx = 1;
         formCard.add(txtExtra1, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 6;
+        gbc.gridx = 0;
+        gbc.gridy = 6;
         lblExtra2.setFont(labelFont);
         formCard.add(lblExtra2, gbc);
         gbc.gridx = 1;
@@ -136,6 +150,7 @@ public class HospitalSalaryGUI extends JFrame {
 
         return outerPanel;
     }
+
     private JPanel createTablePanel() {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(new EmptyBorder(15, 15, 15, 15));
@@ -180,6 +195,7 @@ public class HospitalSalaryGUI extends JFrame {
         panel.add(btnPanel, BorderLayout.SOUTH);
         return panel;
     }
+
     private JPanel createReportPanel() {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(new EmptyBorder(15, 15, 15, 15));
@@ -202,6 +218,7 @@ public class HospitalSalaryGUI extends JFrame {
         panel.add(buttonContainer, BorderLayout.SOUTH);
         return panel;
     }
+
     private JButton createStyledButton(String text, Color bg) {
         JButton btn = new JButton(text);
         btn.setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -211,6 +228,7 @@ public class HospitalSalaryGUI extends JFrame {
         btn.setPreferredSize(new Dimension(150, 32));
         return btn;
     }
+
     private void saveEmployee() {
         try {
             String id = txtId.getText().trim();
@@ -247,6 +265,7 @@ public class HospitalSalaryGUI extends JFrame {
             JOptionPane.showMessageDialog(this, "Error saving record: " + ex.getMessage(), "System Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+
     private void refreshTableData() {
         tableModel.setRowCount(0);
         List<Employee> list = db.readAllEmployees();
@@ -261,6 +280,7 @@ public class HospitalSalaryGUI extends JFrame {
             });
         }
     }
+
     private void searchEmployee() {
         String id = JOptionPane.showInputDialog(this, "Enter Employee ID to search:");
         if (id != null && !id.trim().isEmpty()) {
@@ -276,6 +296,7 @@ public class HospitalSalaryGUI extends JFrame {
             }
         }
     }
+
     private void deleteEmployee() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {
@@ -294,6 +315,7 @@ public class HospitalSalaryGUI extends JFrame {
             }
         }
     }
+
     private void generateReport() {
         List<Employee> list = db.readAllEmployees();
         if (list.isEmpty()) {
@@ -325,6 +347,7 @@ public class HospitalSalaryGUI extends JFrame {
 
         txtReport.setText(sb.toString());
     }
+
     private void clearForm() {
         txtId.setText("");
         txtName.setText("");
