@@ -4,6 +4,8 @@ A Java Swing desktop application for managing hospital staff payroll — registe
 
 ---
 
+![image alt](https://github.com/HakimulAzizAlif/hospitalSalaryManagement/blob/6a6062949d554e9c4bad2b4f04b80e5566deef7d/WhatsApp%20Image%202026-09-29%20at%2008.07.15.jpeg)
+
 ## Overview
 
 The Hospital Payroll Management System centralizes staff salary management into a single desktop app. Administrators can register doctors and nurses, browse the staff directory, search or delete records, and generate a payroll summary — all backed by simple, human-readable file storage that survives application restarts.
