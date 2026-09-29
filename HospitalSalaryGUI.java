@@ -4,9 +4,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
-
 public class HospitalSalaryGUI extends JFrame {
-
     private final Database db = new Database();
     private final JTextField txtId = new JTextField(18);
     private final JTextField txtName = new JTextField(18);
@@ -20,7 +18,6 @@ public class HospitalSalaryGUI extends JFrame {
     private DefaultTableModel tableModel;
     private JTable table;
     private final JTextArea txtReport = new JTextArea();
-
     public HospitalSalaryGUI() {
         setTitle("Hospital Payroll Management System");
         setSize(820, 600);
@@ -47,7 +44,6 @@ public class HospitalSalaryGUI extends JFrame {
 
         contentPane.add(tabbedPane, BorderLayout.CENTER);
         add(contentPane);
-
         refreshTableData();
     }
 
