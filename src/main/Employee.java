@@ -1,10 +1,17 @@
-public abstract class Employee implements Payable {
+public abstract class Employee implements Payable
+    {
     private String id;
+        
     private String name;
+        
     private String department;
+        
     private double baseSalary;
-    public Employee(String id, String name, String department, double baseSalary) throws InvalidSalaryException {
-        if (baseSalary < 0) {
+        
+    public Employee(String id, String name, String department, double baseSalary) throws InvalidSalaryException
+        {
+        if (baseSalary < 0)
+        {
             throw new InvalidSalaryException("Base salary cannot be negative!");
         }
         this.id = id;
@@ -12,29 +19,38 @@ public abstract class Employee implements Payable {
         this.department = department;
         this.baseSalary = baseSalary;
     }
-    public String getId() {
+    public String getId()
+    {
         return id;
     }
-    public void setId(String id) {
+    public void setId(String id)
+    {
         this.id = id;
     }
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
-    public String getDepartment() {
+    public String getDepartment() 
+    {
         return department;
     }
-    public void setDepartment(String department) {
+    public void setDepartment(String department)
+    {
         this.department = department;
     }
-    public double getBaseSalary() {
+    public double getBaseSalary()
+    {
         return baseSalary;
     }
-    public void setBaseSalary(double baseSalary) throws InvalidSalaryException {
-        if (baseSalary < 0) {
+    public void setBaseSalary(double baseSalary) throws InvalidSalaryException
+        {
+        if (baseSalary < 0) 
+        {
             throw new InvalidSalaryException("Base salary cannot be negative!");
         }
         this.baseSalary = baseSalary;
