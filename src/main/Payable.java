@@ -1,3 +1,6 @@
-public interface Payable {
+public interface Payable
+
+
+{
     double calculateSalary();
 }
