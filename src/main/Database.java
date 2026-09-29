@@ -2,12 +2,16 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-public class Database {
+public class Database
+    {
     private String fileName = "hospital_employees.txt";
-    public Database() {
-        try {
+    public Database()
+        {
+        try
+            {
             File file = new File(fileName);
-            if (!file.exists()) {
+            if (!file.exists()) 
+            {
                 file.createNewFile();
             }
         } catch (IOException e) {
