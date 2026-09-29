@@ -1,9 +1,11 @@
 public class Doctor extends Employee {
     private double consultationFee;
     private int patientsTreated;
+    
     public Doctor(String id, String name, String department, double baseSalary, double consultationFee, int patientsTreated) throws InvalidSalaryException {
         super(id, name, department, baseSalary);
-        if (consultationFee < 0 || patientsTreated < 0) {
+        if (consultationFee < 0 || patientsTreated < 0) 
+        {
             throw new InvalidSalaryException("Consultation fee and patient count must be non-negative!");
         }
         this.consultationFee = consultationFee;
