@@ -1,10 +1,13 @@
-public abstract class Employee implements Payable {
+public abstract class Employee implements Payable 
+{
     private String id;
     private String name;
     private String department;
     private double baseSalary;
-    public Employee(String id, String name, String department, double baseSalary) throws InvalidSalaryException {
-        if (baseSalary < 0) {
+    public Employee(String id, String name, String department, double baseSalary) throws InvalidSalaryException 
+    {
+        if (baseSalary < 0) 
+        {
             throw new InvalidSalaryException("Base salary cannot be negative!");
         }
         this.id = id;
